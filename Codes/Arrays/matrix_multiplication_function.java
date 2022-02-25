@@ -5,8 +5,8 @@ public class matrix_multiplication_function {
   public static void main(String[] args) {
     Scanner input = new Scanner(System.in);
     System.out.println("ENTER THE NUMBER OF ROWS AND COLUMNS");
-
     int r1 = input.nextInt(), c1 = input.nextInt();
+    System.out.println("ENTER THE NUMBER OF ROWS AND COLUMNS");
     int r2 = input.nextInt(), c2 = input.nextInt();
 
     int[][] firstMatrix = new int[r1][c1];
