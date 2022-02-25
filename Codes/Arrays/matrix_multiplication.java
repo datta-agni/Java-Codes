@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 // program to Multiply two Matrices
-public class multiplication_matrix {
+public class matrix_multiplication {
   public static void main(String[] args) {
     Scanner input = new Scanner(System.in);
 

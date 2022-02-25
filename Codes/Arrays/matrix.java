@@ -22,11 +22,8 @@ public class matrix {
   public static void input_matrix(Scanner scan, int[][] num, int rows, int columns) {
     System.out.println("Please enter elements in matrix : ");
 
-    for (int a = 0; a < rows; a++) {
-      for (int b = 0; b < columns; b++) {
-        num[a][b] = scan.nextInt();
-      }
-    }
+    for (int a = 0; a < rows; a++)
+      for (int b = 0; b < columns; b++) num[a][b] = scan.nextInt();
   }
 
   public static void display_matrix(int[][] num, int rows, int columns) {

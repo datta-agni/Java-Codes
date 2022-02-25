@@ -13,11 +13,8 @@ public class half_pyramid_string {
     char last = input.next().charAt(0), alphabet = input.next().charAt(0);
 
     for (int i = 1; i <= (last - 'A' + 1); ++i) {
-      for (int j = 1; j <= i; ++j) {
-        System.out.print(alphabet + " ");
-      }
+      for (int j = 1; j <= i; ++j) System.out.print(alphabet + " ");
       ++alphabet;
-
       System.out.println();
     }
     input.close();

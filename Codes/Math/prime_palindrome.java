@@ -50,21 +50,16 @@ public class prime_palindrome {
 
     Arrays.fill(prime, true);
 
-    for (int p = 2; p * p <= n; p++) {
-      // If prime[p] is not changed, then it is a prime
-      if (prime[p]) {
-        // Update all multiples of p
-        for (int i = p * 2; i <= n; i += p) {
-          prime[i] = false;
-        }
+    for (int p = 2; p * p <= n; p++) { // If prime[p] is not changed, then it is a prime
+      if (prime[p]) { // Update all multiples of p
+        for (int i = p * 2; i <= n; i += p) prime[i] = false;
       }
     }
     // Print all palindromic prime numbers
     for (int p = 2; p <= n; p++) {
       // checking whether the given number is prime palindromic or not
-      if (prime[p] && isPal(p)) {
+      if (prime[p] && isPal(p))
         System.out.print(p + " ");
-      }
     }
   }
 

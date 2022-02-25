@@ -16,10 +16,9 @@ public class pythagorean_triplets {
    * Check if a,b,c are a Pythagorean Triple
    */
   public static boolean isPythagoreanTriple(int a, int b, int c) {
-    if (a <= 0 || b <= 0 || c <= 0) {
+    if (a <= 0 || b <= 0 || c <= 0)
       return false;
-    } else {
+    else
       return (a * a) + (b * b) == (c * c);
-    }
   }
 }

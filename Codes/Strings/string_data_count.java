@@ -13,24 +13,20 @@ public class string_data_count {
       char ch = line.charAt(i);
 
       // check if character is any of a, e, i, o, u
-      if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
+      if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u')
         ++vowels;
-      }
 
       // check if character is in between a to z
-      else if ((ch >= 'a' && ch <= 'z')) {
+      else if ((ch >= 'a' && ch <= 'z'))
         ++consonants;
-      }
 
       // check if character is in between 0 to 9
-      else if (ch >= '0' && ch <= '9') {
+      else if (ch >= '0' && ch <= '9')
         ++digits;
-      }
 
       // check if character is a white space
-      else if (ch == ' ') {
+      else if (ch == ' ')
         ++spaces;
-      }
     }
 
     System.out.println("Vowels: " + vowels);

@@ -10,9 +10,7 @@ public class character_array_string_conversion {
     int n = input.nextInt();
     char[] ch = new char[n];
 
-    for (int i = 0; i < n; i++) {
-      ch[i] = input.next().charAt(0);
-    }
+    for (int i = 0; i < n; i++) ch[i] = input.next().charAt(0);
 
     String st = String.valueOf(ch);
     String st2 = new String(ch);

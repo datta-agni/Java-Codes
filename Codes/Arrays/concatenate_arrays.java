@@ -9,13 +9,8 @@ public class concatenate_arrays {
     int n1 = input.nextInt(), n2 = input.nextInt();
     int[] array1 = new int[n1], array2 = new int[n2];
 
-    for (int i = 0; i < n1; i++) {
-      array1[i] = input.nextInt();
-    }
-
-    for (int i = 0; i < n2; i++) {
-      array2[i] = input.nextInt();
-    }
+    for (int i = 0; i < n1; i++) array1[i] = input.nextInt();
+    for (int i = 0; i < n2; i++) array2[i] = input.nextInt();
 
     int aLen = array1.length;
     int bLen = array2.length;

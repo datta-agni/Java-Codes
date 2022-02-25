@@ -14,11 +14,9 @@ public class power_of_number_function {
   }
 
   public static long power(long base, long powerRaised) {
-    if (powerRaised != 0) {
-      // recursive call to power()
+    if (powerRaised != 0) // recursive call to power()
       return (base * power(base, powerRaised - 1));
-    } else {
+    else
       return 1;
-    }
   }
 }

@@ -7,16 +7,13 @@ public class largest_element {
     int n = input.nextInt();
     double[] numArray = new double[n];
 
-    for (int i = 0; i < n; i++) {
-      numArray[i] = input.nextInt();
-    }
+    for (int i = 0; i < n; i++) numArray[i] = input.nextInt();
 
     double largest = numArray[0];
 
-    for (double num : numArray) {
+    for (double num : numArray)
       if (largest < num)
         largest = num;
-    }
 
     System.out.format("Largest element = %.2f", largest);
     input.close();

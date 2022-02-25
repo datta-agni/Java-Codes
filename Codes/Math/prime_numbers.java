@@ -19,7 +19,6 @@ public class prime_numbers {
 
       if (!flag && low != 0 && low != 1)
         System.out.print(low + " ");
-
       ++low;
     }
 

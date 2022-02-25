@@ -6,9 +6,7 @@ public class sort_string_lexicographical_order {
     Scanner input = new Scanner(System.in);
     int n = input.nextInt();
     String[] words = new String[n];
-    for (int i = 0; i < n; i++) {
-      words[i] = input.nextLine();
-    }
+    for (int i = 0; i < n; i++) words[i] = input.nextLine();
 
     for (int i = 0; i < 3; ++i) {
       for (int j = i + 1; j < 4; ++j) {
@@ -23,9 +21,7 @@ public class sort_string_lexicographical_order {
 
     System.out.println("In lexicographical order:");
 
-    for (int i = 0; i < 4; i++) {
-      System.out.println(words[i]);
-    }
+    for (int i = 0; i < 4; i++) System.out.println(words[i]);
 
     input.close();
   }

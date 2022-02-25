@@ -15,9 +15,9 @@ public class miller_rabin_primality {
       return true;
 
     int[] primesToTest = getPrimesToTest(n);
-    if (n.equals(new BigInteger("3215031751"))) {
+    if (n.equals(new BigInteger("3215031751")))
       return false;
-    }
+
     BigInteger d = n.subtract(BigInteger.ONE);
     BigInteger s = BigInteger.ZERO;
     while (d.mod(BigInteger.valueOf(2)).equals(BigInteger.ZERO)) {
@@ -25,9 +25,8 @@ public class miller_rabin_primality {
       s = s.add(BigInteger.ONE);
     }
     for (int a : primesToTest) {
-      if (try_composite(a, d, n, s)) {
+      if (try_composite(a, d, n, s))
         return false;
-      }
     }
     return true;
   }
@@ -65,9 +64,8 @@ public class miller_rabin_primality {
 
   private static boolean try_composite(int a, BigInteger d, BigInteger n, BigInteger s) {
     BigInteger aB = BigInteger.valueOf(a);
-    if (aB.modPow(d, n).equals(BigInteger.ONE)) {
+    if (aB.modPow(d, n).equals(BigInteger.ONE))
       return false;
-    }
     for (int i = 0; BigInteger.valueOf(i).compareTo(s) < 0; i++) {
       // if pow(a, 2 ** i * d, n) == n - 1
       if (aB.modPow(BigInteger.valueOf(2).pow(i).multiply(d), n)

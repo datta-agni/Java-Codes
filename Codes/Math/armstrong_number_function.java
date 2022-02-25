@@ -6,10 +6,10 @@ public class armstrong_number_function {
     Scanner input = new Scanner(System.in);
     int low = input.nextInt(), high = input.nextInt();
 
-    for (int number = low + 1; number < high; ++number) {
+    for (int number = low + 1; number < high; ++number)
       if (checkArmstrong(number))
         System.out.print(number + " ");
-    }
+
     input.close();
   }
 

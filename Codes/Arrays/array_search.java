@@ -9,9 +9,7 @@ public class array_search {
     double[] num = new double[lim];
     boolean found = false;
 
-    for (int i = 0; i < lim; i++) {
-      num[i] = input.nextInt();
-    }
+    for (int i = 0; i < lim; i++) num[i] = input.nextInt();
 
     for (double n : num) {
       if (n == toFind) {

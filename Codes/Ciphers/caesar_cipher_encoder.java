@@ -37,9 +37,8 @@ public class caesar_cipher_encoder {
           alphabet = (char) (alphabet + 'A' - 'Z' - 1);
         }
         cipher_text = cipher_text + alphabet;
-      } else {
+      } else
         cipher_text = cipher_text + alphabet;
-      }
     }
     System.out.println("Encoded Message : " + cipher_text);
     input.close();

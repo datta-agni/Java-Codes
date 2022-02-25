@@ -10,9 +10,7 @@ public class power_of_number {
     long result = 1;
     input.close();
 
-    for (; exponent != 0; --exponent) {
-      result *= base;
-    }
+    for (; exponent != 0; --exponent) result *= base;
 
     System.out.println("Answer = " + result);
   }

@@ -11,11 +11,11 @@ public class character_print {
     int n = input.nextInt();
     input.close();
 
-    if (n == 1) {
+    if (n == 1)
       for (c = 'A'; c <= 'Z'; ++c) System.out.print(c + " ");
-    } else if (n == 2) {
+    else if (n == 2)
       for (c = 'a'; c <= 'z'; ++c) System.out.print(c + " ");
-    } else
+    else
       System.exit(0);
   }
 }

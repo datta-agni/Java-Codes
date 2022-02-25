@@ -16,15 +16,13 @@ public class string_null_check {
   // method check if string is null or empty
   public static String isNullEmpty(String str) {
     // check if string is null
-    if (str == null) {
+    if (str == null)
       return "NULL";
-    }
 
     // check if string is empty
-    else if (str.trim().isEmpty()) {
+    else if (str.trim().isEmpty())
       return "EMPTY";
-    } else {
+    else
       return "neither NULL nor EMPTY";
-    }
   }
 }

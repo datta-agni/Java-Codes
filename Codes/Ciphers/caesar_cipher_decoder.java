@@ -8,9 +8,7 @@ public class caesar_cipher_decoder {
     System.out.println("Enter the shift value : ");
     int shift = input.nextInt();
     String decryptMessage = "";
-    for (int i = 0; i < cipher_text.length(); i++)
-
-    {
+    for (int i = 0; i < cipher_text.length(); i++) {
       // Shift one character at a time
       char alphabet = cipher_text.charAt(i);
       // if alphabet lies between a and z
@@ -36,9 +34,8 @@ public class caesar_cipher_decoder {
           alphabet = (char) (alphabet - 'A' + 'Z' + 1);
         }
         decryptMessage = decryptMessage + alphabet;
-      } else {
+      } else
         decryptMessage = decryptMessage + alphabet;
-      }
     }
     System.out.println("Decrypted message : " + decryptMessage);
     input.close();

@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 // Program to Multiply Two Matrices using a Function
-public class multiplication_matrix_function {
+public class matrix_multiplication_function {
   public static void main(String[] args) {
     Scanner input = new Scanner(System.in);
     System.out.println("ENTER THE NUMBER OF ROWS AND COLUMNS");
@@ -15,16 +15,12 @@ public class multiplication_matrix_function {
     System.out.println("ENTER THE VALUE OF FIRST MATRIX");
     // input block for 1st matrix
     for (int i = 0; i < r1; i++)
-      for (int j = 0; j < c1; j++) {
-        firstMatrix[i][j] = input.nextInt();
-      }
+      for (int j = 0; j < c1; j++) firstMatrix[i][j] = input.nextInt();
 
     System.out.println("ENTER THE VALUES OF SECOND MATRIX");
     // input block for second matrix
     for (int i = 0; i < r2; i++)
-      for (int j = 0; j < c2; j++) {
-        secondMatrix[i][j] = input.nextInt();
-      }
+      for (int j = 0; j < c2; j++) secondMatrix[i][j] = input.nextInt();
 
     // multiplying Two matrices
     int[][] product = matrix_multiply(firstMatrix, secondMatrix, r1, c1, c2);
@@ -37,13 +33,9 @@ public class multiplication_matrix_function {
   public static int[][] matrix_multiply(
       int[][] firstMatrix, int[][] secondMatrix, int r1, int c1, int c2) {
     int[][] product = new int[r1][c2];
-    for (int i = 0; i < r1; i++) {
-      for (int j = 0; j < c2; j++) {
-        for (int k = 0; k < c1; k++) {
-          product[i][j] += firstMatrix[i][k] * secondMatrix[k][j];
-        }
-      }
-    }
+    for (int i = 0; i < r1; i++)
+      for (int j = 0; j < c2; j++)
+        for (int k = 0; k < c1; k++) product[i][j] += firstMatrix[i][k] * secondMatrix[k][j];
 
     return product;
   }
@@ -51,9 +43,7 @@ public class multiplication_matrix_function {
   public static void display_matrix(int[][] product) {
     System.out.println("Product of two matrices is: ");
     for (int[] row : product) {
-      for (int column : row) {
-        System.out.print(column + "    ");
-      }
+      for (int column : row) System.out.print(column + "    ");
       System.out.println();
     }
   }

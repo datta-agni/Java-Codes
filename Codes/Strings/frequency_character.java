@@ -10,9 +10,8 @@ public class frequency_character {
     int frequency = 0;
 
     for (int i = 0; i < str.length(); i++) {
-      if (ch == str.charAt(i)) {
+      if (ch == str.charAt(i))
         ++frequency;
-      }
     }
 
     System.out.println("Frequency of " + ch + " = " + frequency);

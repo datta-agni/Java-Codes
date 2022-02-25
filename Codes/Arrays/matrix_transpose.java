@@ -13,20 +13,17 @@ public class matrix_transpose {
 
     // input block for 1st matrix
     for (int i = 0; i < row; i++)
-      for (int j = 0; j < column; j++) {
-        matrix[i][j] = input.nextInt();
-      }
+      for (int j = 0; j < column; j++) matrix[i][j] = input.nextInt();
 
     // Display current matrix
     display(matrix);
 
     // Transpose the matrix
     int[][] transpose = new int[column][row];
-    for (int i = 0; i < row; i++) {
-      for (int j = 0; j < column; j++) {
-        transpose[j][i] = matrix[i][j];
-      }
-    }
+
+    for (int i = 0; i < row; i++)
+      for (int j = 0; j < column; j++) transpose[j][i] = matrix[i][j];
+
     input.close();
     // Display transposed matrix
     display(transpose);
@@ -35,9 +32,7 @@ public class matrix_transpose {
   public static void display(int[][] matrix) {
     System.out.println("The matrix is: ");
     for (int[] row : matrix) {
-      for (int column : row) {
-        System.out.print(column + "    ");
-      }
+      for (int column : row) System.out.print(column + "    ");
       System.out.println();
     }
   }
