@@ -1,76 +1,40 @@
-import java.util.Arrays;
-import java.util.Scanner;
-
 public class prime_palindrome {
-  // A function that returns true only if number contains one digit
-
-  static boolean oneDigit(int num) {
-    // comparison operation is faster than division operation. So using following
-    // instead of "return num / 10 == 0;"
-    return (num >= 0 && num < 10);
-  }
-
-  // A recursive function to find out whether num is palindrome or not. Initially,
-  // dupNum contains address of a copy of num.
-  static boolean isPalUtil(int num, int dupNum) {
-    // Base case (needed for recursion termination): This statement mainly compares
-    // the first digit with the last digit
-    if (oneDigit(num))
-      return (num == (dupNum) % 10);
-    // This is the key line in this method. Note that all recursive calls have a
-    // separate copy of num, but they all share same copy of dupNum. We divide num
-    // while moving up the recursion tree
-    if (!isPalUtil(num / 10, dupNum))
-      return false;
-    // The following statements are executed when we move up the recursion call tree
-    dupNum /= 10;
-    // At this point, if num%10 contains ith digit from beginning, then (dupNum)%10
-    // contains ith digit from end
-    return (num % 10 == (dupNum) % 10);
-  }
-  // The main function that uses recursive function isPalUtil() to find out
-  // whether num is palindrome or not
-
-  static boolean isPal(int num) {
-    // If num is negative, make it positive
-    if (num < 0)
-      num = -num;
-    // Create a separate copy of num, so that modifications made to address dupNum
-    // don't change the input number. dupNum = num
-    int dupNum = num;
-    return isPalUtil(num, dupNum);
-  }
-  // Function to generate all primes and checking whether number is palindromic or
-  // not
-
-  static void printPalPrimesLessThanN(int n) {
-    // Create a boolean array "prime[0..n]" and initialize all entries it as true. A
-    // value in prime[i] will finally be false if i is Not a prime, else true.
-    boolean[] prime = new boolean[n + 1];
-
-    Arrays.fill(prime, true);
-
-    for (int p = 2; p * p <= n; p++) { // If prime[p] is not changed, then it is a prime
-      if (prime[p]) { // Update all multiples of p
-        for (int i = p * 2; i <= n; i += p) prime[i] = false;
-      }
-    }
-    // Print all palindromic prime numbers
-    for (int p = 2; p <= n; p++) {
-      // checking whether the given number is prime palindromic or not
-      if (prime[p] && isPal(p))
-        System.out.print(p + " ");
-    }
-  }
-
-  // main function
   public static void main(String[] args) {
+    int startRange, endRange;
     Scanner input = new Scanner(System.in);
-    int n = input.nextInt();
-    System.out.printf("Palindromic primes smaller than or "
-            + "equal to %d are :\n",
-        n);
-    printPalPrimesLessThanN(n);
-    input.close();
+
+    System.out.println("Enter start value");
+    startRange = input.nextInt();
+
+    System.out.println("Enter last value");
+    endRange = input.nextInt();
+
+    System.out.println("The PalPrime Numbers between" + startRange + " and " + endRange + "are: ");
+
+    for (int i = startRange; i <= endRange; i++)
+      if (checkPalPrimeNumber(i))
+        System.out.println(i);
+  }
+
+  static boolean checkPalPrimeNumber(int number) {
+    int temp, rem, i;
+    int count = 0;
+    int sum = 0;
+    temp = number;
+
+    for (i = 1; i <= temp; i++)
+      if (temp % i == 0)
+        count++;
+
+    while (number > 0) {
+      rem = number % 10;
+      sum = sum * 10 + rem;
+      number = number / 10;
+    }
+
+    if (temp == sum && count == 2)
+      return true;
+    else
+      return false;
   }
 }
