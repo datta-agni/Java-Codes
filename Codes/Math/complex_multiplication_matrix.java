@@ -2,38 +2,38 @@ import java.util.Scanner;
 
 public class complex_multiplication_matrix {
   private double real = 0.0, img = 0.0;
-  public Complex_Multiplication_Matrix(double real, double img) {
+  public complex_multiplication_matrix(double real, double img) {
     this.real = real;
     this.img = img;
   }
-  public Complex_Multiplication_Matrix() {
+  public complex_multiplication_matrix() {
     this.real = 0;
     this.img = 0;
   }
 
-  public Complex_Multiplication_Matrix complex_Form(double re, double im) {
-    Complex_Multiplication_Matrix res = new Complex_Multiplication_Matrix();
+  public complex_multiplication_matrix complex_Form(double re, double im) {
+    complex_multiplication_matrix res = new complex_multiplication_matrix();
     res.real = re;
     res.img = im;
     return res;
   }
-  public Complex_Multiplication_Matrix multiplication(Complex_Multiplication_Matrix C2) {
-    Complex_Multiplication_Matrix Res = new Complex_Multiplication_Matrix();
+  public complex_multiplication_matrix multiplication(complex_multiplication_matrix C2) {
+    complex_multiplication_matrix Res = new complex_multiplication_matrix();
     Res.real = (this.real * C2.real) - (this.img * C2.img);
     Res.img = (this.real * C2.img) + (this.img * C2.real);
     return Res;
   }
-  public Complex_Multiplication_Matrix addtion(Complex_Multiplication_Matrix C2) {
-    Complex_Multiplication_Matrix Res = new Complex_Multiplication_Matrix();
+  public complex_multiplication_matrix addtion(complex_multiplication_matrix C2) {
+    complex_multiplication_matrix Res = new complex_multiplication_matrix();
     this.real += C2.real;
     this.img += C2.img;
     Res.real = this.real;
     Res.img = this.img;
     return Res;
   }
-  public Complex_Multiplication_Matrix[][] matrix_multiplication(
-      Complex_Multiplication_Matrix[][] a, Complex_Multiplication_Matrix[][] b,
-      Complex_Multiplication_Matrix[][] res, int n) {
+  public complex_multiplication_matrix[][] matrix_multiplication(
+      complex_multiplication_matrix[][] a, complex_multiplication_matrix[][] b,
+      complex_multiplication_matrix[][] res, int n) {
     for (int i = 0; i < n; i++)
       for (int j = 0; j < n; j++)
         for (int k = 0; k < n; k++) res[i][j] = res[i][j].addtion(a[i][k].multiplication(b[k][j]));
@@ -44,10 +44,10 @@ public class complex_multiplication_matrix {
     System.out.println("Enter the dimension of the square matrix: ");
     int n = input.nextInt();
     double re, im;
-    Complex_Multiplication_Matrix[][] a = new Complex_Multiplication_Matrix[n][n];
-    Complex_Multiplication_Matrix[][] b = new Complex_Multiplication_Matrix[n][n];
-    Complex_Multiplication_Matrix[][] res = new Complex_Multiplication_Matrix[n][n];
-    Complex_Multiplication_Matrix C = new Complex_Multiplication_Matrix();
+    complex_multiplication_matrix[][] a = new complex_multiplication_matrix[n][n];
+    complex_multiplication_matrix[][] b = new complex_multiplication_matrix[n][n];
+    complex_multiplication_matrix[][] res = new complex_multiplication_matrix[n][n];
+    complex_multiplication_matrix C = new complex_multiplication_matrix();
 
     System.out.println("Enter the complex elements of 1st matrix: ");
     for (int i = 0; i < n; i++) {
