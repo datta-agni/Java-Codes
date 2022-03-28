@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class prime_palindrome {
   public static void main(String[] args) {
     int startRange, endRange;
@@ -14,6 +16,8 @@ public class prime_palindrome {
     for (int i = startRange; i <= endRange; i++)
       if (checkPalPrimeNumber(i))
         System.out.println(i);
+
+    input.close();
   }
 
   static boolean checkPalPrimeNumber(int number) {
